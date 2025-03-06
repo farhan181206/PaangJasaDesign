@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <style>
+      :root {
+        --bg-primary: #1f2937;
+        --bg-secondary: #111827;
+        --text-primary: #f3f4f6;
+        --text-secondary: #9ca3af;
+      }
+      [data-theme="light"] {
+        --bg-primary: #ffffff;
+        --bg-secondary: #f3f4f6;
+        --text-primary: #111827;
+        --text-secondary: #4b5563;
+      }
+      @media (max-width: 1024px) {
+        .flex.min-h-screen {
+          flex-direction: column;
+        }
+        .apala {
+          display: flex;
+          gap: 0;
+          width: 350px;
+        }
+        .apala img {
+          display: none;
+        }
+        .apala h1 {
+          font-size: 30px;
+          width: 250px;
+        }
+        .apala h4 {
+          font-size: 15px;
+          width: 250px;
+        }
+        .w-1\2 {
+          width: 100%;
+        }
+        .grid-cols-2 {
+          grid-template-columns: 1fr;
+        }
+        .lg\:sticky {
+          position: relative;
+        }
+        .lg\:h-screen {
+          height: auto;
+        }
+      }
+      @media (max-width: 640px) {
+        .p-12 {
+          padding: 1rem;
+        }
+        .text-4xl {
+          font-size: 1.75rem;
+          line-height: 2rem;
+        }
+        .text-2xl {
+          font-size: 1.25rem;
+          line-height: 1.75rem;
+        }
+        .text-xl {
+          font-size: 1rem;
+          line-height: 1.5rem;
+        }
+        .w-32.h-32 {
+          width: 5rem;
+          height: 5rem;
+        }
+        .space-y-8 {
+          margin-top: 1.5rem;
+          margin-bottom: 1.5rem;
+        }
+        .space-y-12 > * + * {
+          margin-top: 2rem;
+        }
+        .grid-cols-1 {
+          grid-template-columns: 1fr;
+        }
+        .flex.flex-wrap.gap-4 {
+          gap: 0.75rem;
+        }
+        .w-10.h-10 {
+          width: 2.25rem;
+          height: 2.25rem;
+        }
+      }
+    </style>
+    <title>Portfolio</title>
+    <!-- <script src="https://cdn.tailwindcss.com"></script> -->
+    <link href="src/output.css" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <style>
+      :where([class^="ri-"])::before {
+        content: "\f3c2";
+      }
+      body {
+        font-family: "Poppins", sans-serif, Arial, sans-serif;
+      }
+      .animate-fade {
+        animation: fadeIn 0.6s ease-in;
+      }
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+    </style>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: "#3b82f6",
+              secondary: "#f97316",
+            },
+            borderRadius: {
+              none: "0px",
+              sm: "4px",
+              DEFAULT: "8px",
+              md: "12px",
+              lg: "16px",
+              xl: "20px",
+              "2xl": "24px",
+              "3xl": "32px",
+              full: "9999px",
+              button: "8px",
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body
+    class="min-h-screen transition-colors duration-200"
+    style="background-color: var(--bg-primary); color: var(--text-primary)"
+  >
+    <button
+      id="themeToggle"
+      class="fixed top-4 right-4 w-10 h-10 flex items-center justify-center rounded-full bg-gray-800 hover:bg-primary hover:text-white transition-colors cursor-pointer z-50"
+    >
+      <i class="ri-sun-line text-xl theme-icon"></i>
+    </button>
+    <div class="flex min-h-screen flex-col lg:flex-row">
+      <div
+        class="w-full lg:w-1/2 p-6 sm:p-8 lg:p-12 flex flex-col justify-between lg:sticky lg:top-0 lg:h-screen transition-colors duration-200"
+        style="
+          background: linear-gradient(
+            to bottom right,
+            var(--bg-secondary),
+            var(--bg-primary)
+          );
+        "
+      >
+        <div class="space-y-8">
+          <div
+            class="apala w-full h-32 rounded-full gap-10 bg-black flex justify-center items-center border-4 border-primary border-double"
+          >
+            <img
+              src="asset/kepala.gif"
+              class="w-24 h-24 object-cover"
+              alt="Profile"
+            />
+            <div class="flex flex-col items-center">
+              <h1
+                class="text-4xl w-80 font-bold text-center bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 inline-block text-transparent bg-clip-text"
+              >
+                Paang Design
+              </h1>
+              <h4
+                class="text-2xl w-96 font-bold text-center bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 inline-block text-transparent bg-clip-text"
+              >
+                Jasa Edit Murah Dan Berkualitas
+              </h4>
+            </div>
+          </div>
+
+          <div>
+            <h1 class="text-4xl font-bold">Muhammad Farhan</h1>
+            <h2 class="text-xl text-primary mb-2">
+              Creative Director & UI/UX Designer & Web Development
+            </h2>
+            <p style="color: var(--text-secondary)" class="leading-relaxed">
+              Dengan pengalaman lebih dari 4 tahun dalam desain digital dan
+              arahan kreatif, saya mengkhususkan diri dalam menciptakan
+              pengalaman digital yang bermakna yang menghubungkan merek dengan
+              audiens mereka. Berbasis di Sulawesi Selatan, Indonesia, saya
+              telah bekerja sama dengan perusahaan rintisan seperti pertamina
+              gas, suni universitas dan perusahaan di jogjakarta. dan saya
+              memiliki pengalaman dalam pengembangan web seperti 2 tahun menjadi
+              backend menggunakan laravel
+            </p>
+          </div>
+          <div class="space-y-4">
+            <h3 class="text-lg font-semibold">Skill</h3>
+            <div class="flex flex-wrap gap-2">
+              <span
+                class="px-3 py-1 bg-gray-800 text-blue-400 rounded-full text-sm"
+                >UI Design</span
+              >
+              <span
+                class="px-3 py-1 bg-gray-800 text-blue-400 rounded-full text-sm"
+                >UX Research</span
+              >
+              <span
+                class="px-3 py-1 bg-gray-800 text-blue-400 rounded-full text-sm"
+                >Design Systems</span
+              >
+              <span
+                class="px-3 py-1 bg-gray-800 text-blue-400 rounded-full text-sm"
+                >Brand Strategy</span
+              >
+              <span
+                class="px-3 py-1 bg-gray-800 text-blue-400 rounded-full text-sm"
+                >Web Development</span
+              >
+              <span
+                class="px-3 py-1 bg-gray-800 text-blue-400 rounded-full text-sm"
+                >Design Grafis</span
+              >
+              <span
+                class="px-3 py-1 bg-gray-800 text-blue-400 rounded-full text-sm"
+                >Pentesting</span
+              >
+              <span
+                class="px-3 py-1 bg-gray-800 text-blue-400 rounded-full text-sm"
+                >Administrator Dashboard</span
+              >
+            </div>
+          </div>
+        </div>
+        <div class="space-y-6 mt-4">
+          <div class="flex flex-wrap gap-4">
+            <a
+              href="https://wa.me/08388001585"
+              class="w-10 h-10 flex items-center justify-center rounded-full bg-gray-800 hover:bg-primary hover:text-white transition-colors cursor-pointer"
+            >
+              <i class="ri-whatsapp-line text-xl text-blue-400"></i>
+            </a>
+            <a
+              href="https://www.instagram.com/muhammadfarhan_askar/"
+              class="w-10 h-10 flex items-center justify-center rounded-full bg-gray-800 hover:bg-primary hover:text-white transition-colors cursor-pointer"
+            >
+              <i class="ri-instagram-line text-xl text-blue-400"></i>
+            </a>
+            <a
+              href="https://farhan181206.github.io/farhan/"
+              class="w-10 h-10 flex items-center justify-center rounded-full bg-gray-800 hover:bg-primary hover:text-white transition-colors cursor-pointer"
+            >
+              <i class="ri-pass-valid-line text-xl text-blue-400"></i>
+            </a>
+          </div>
+          <button
+            class="w-full py-3 bg-primary text-white rounded-button hover:bg-primary/90 transition-all cursor-pointer shadow-lg hover:shadow-primary/30 hover:-translate-y-0.5 relative overflow-hidden group"
+          >
+            <span
+              class="absolute inset-0 w-full h-full bg-gradient-to-r from-white/20 via-transparent to-transparent transform -translate-x-full group-hover:translate-x-full transition-transform duration-700"
+            ></span>
+            <span class="relative">Get in Touch</span>
+          </button>
+        </div>
+      </div>
+      <div
+        class="w-full lg:w-1/2 p-6 sm:p-8 lg:p-12 overflow-y-auto transition-colors duration-200"
+        style="background-color: var(--bg-primary)"
+      >
+        <div class="space-y-12">
+          <div>
+            <h3 class="text-2xl font-semibold mb-6">All Project</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div class="group cursor-pointer" onclick="showProjectDetails(1)">
+                <div class="aspect-[4/3] rounded-lg overflow-hidden mb-3">
+                  <img
+                    src="asset/logo.png"
+                    class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                    alt="Project 1"
+                  />
+                </div>
+                <h4 class="font-medium">SKAONE FUN RUN 2025</h4>
+                <p class="text-sm text-gray-400">Grapic design</p>
+              </div>
+              <div class="group cursor-pointer" onclick="showProjectDetails(2)">
+                <div class="aspect-[4/3] rounded-lg overflow-hidden mb-3">
+                  <img
+                    src="asset/suni.png"
+                    class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                    alt="Project 2"
+                  />
+                </div>
+                <h4 class="font-medium">
+                  Pendaftaran Mahasiswa Baru Suni indonesia
+                </h4>
+                <p class="text-sm text-gray-400">Backend Development</p>
+              </div>
+              <div class="group cursor-pointer" onclick="showProjectDetails(3)">
+                <div class="aspect-[4/3] rounded-lg overflow-hidden mb-3">
+                  <img
+                    src="asset/result_1.png"
+                    class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                    alt="Project 3"
+                  />
+                </div>
+                <h4 class="font-medium">Poster Team Growtopia</h4>
+                <p class="text-sm text-gray-400">Grapic Design</p>
+              </div>
+              <div class="group cursor-pointer" onclick="showProjectDetails(4)">
+                <div class="aspect-[4/3] rounded-lg overflow-hidden mb-3">
+                  <img
+                    src="asset/result_2.png"
+                    class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                    alt="Project 4"
+                  />
+                </div>
+                <h4 class="font-medium">Pvp Growtopia Profile</h4>
+                <p class="text-sm text-gray-400">Grapic Design</p>
+              </div>
+              <div class="group cursor-pointer" onclick="showProjectDetails(5)">
+                <div class="aspect-[4/3] rounded-lg overflow-hidden mb-3">
+                  <img
+                    src="asset/result_3.png"
+                    class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                    alt="Project 4"
+                  />
+                </div>
+                <h4 class="font-medium">Pvp Growtopia Profile</h4>
+                <p class="text-sm text-gray-400">Grapic Design</p>
+              </div>
+              <div class="group cursor-pointer" onclick="showProjectDetails(6)">
+                <div class="aspect-[4/3] rounded-lg overflow-hidden mb-3">
+                  <img
+                    src="asset/result_template_aobro.png"
+                    class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                    alt="Project 4"
+                  />
+                </div>
+                <h4 class="font-medium">Background For Live Tiktok</h4>
+                <p class="text-sm text-gray-400">Grapic Design</p>
+              </div>
+              <div class="group cursor-pointer" onclick="showProjectDetails(7)">
+                <div class="aspect-[4/3] rounded-lg overflow-hidden mb-3">
+                  <img
+                    src="asset/result_template.png"
+                    class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                    alt="Project 4"
+                  />
+                </div>
+                <h4 class="font-medium">Poster Price Store</h4>
+                <p class="text-sm text-gray-400">Grapic Design</p>
+              </div>
+            </div>
+          </div>
+          <div>
+            <h3 class="text-2xl font-semibold mb-6">Pengalaman</h3>
+            <div class="space-y-6">
+              <div>
+                <h4 class="font-medium">Design Grapic</h4>
+                <p class="text-primary">Freelancer</p>
+                <p class="text-sm" style="color: var(--text-secondary)">
+                  2024 - Present
+                </p>
+              </div>
+              <div>
+                <h4 class="font-medium">Web Developer</h4>
+                <p class="text-primary">Mahir Techno - Jogja</p>
+                <p class="text-sm text-gray-400">2023 - 2025</p>
+              </div>
+              <div>
+                <h4 class="font-medium">Backend Developer</h4>
+                <p class="text-primary">Mahir Techno - Jogja</p>
+                <p class="text-sm text-gray-400">2023 - 2025</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      id="projectModal"
+      class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center"
+    >
+      <div
+        class="rounded-lg p-4 sm:p-8 max-w-2xl w-full mx-4 max-h-[90vh] overflow-y-auto transition-colors duration-200"
+        style="background-color: var(--bg-secondary)"
+      >
+        <div class="flex justify-between items-center mb-6">
+          <h3 class="text-2xl font-semibold" id="modalTitle"></h3>
+          <button
+            onclick="closeProjectDetails()"
+            class="w-8 h-8 flex items-center justify-center rounded-full hover:bg-gray-700"
+          >
+            <i class="ri-close-line text-xl"></i>
+          </button>
+        </div>
+        <img
+          id="modalImage"
+          class="w-full rounded-lg mb-6"
+          alt="Project detail"
+        />
+        <p id="modalDescription" class="text-gray-600 mb-6"></p>
+
+        <a href="#" id="modalLink" target="_blank" class="text-gray-600"
+          ><p
+            class="text-gray-600 mb-6 underline underline-offset-1"
+            id="modalTextLink"
+          ></p
+        ></a>
+
+        <div class="flex justify-end">
+          <button
+            onclick="closeProjectDetails()"
+            class="px-6 py-2 bg-primary text-white rounded-button hover:bg-primary/90 transition-colors"
+          >
+            Close
+          </button>
+        </div>
+      </div>
+    </div>
+    <script>
+      function toggleTheme() {
+        const body = document.body;
+        const themeIcon = document.querySelector(".theme-icon");
+        const currentTheme = body.getAttribute("data-theme");
+
+        if (currentTheme === "light") {
+          body.removeAttribute("data-theme");
+          themeIcon.classList.remove("ri-moon-line");
+          themeIcon.classList.add("ri-sun-line");
+        } else {
+          body.setAttribute("data-theme", "light");
+          themeIcon.classList.remove("ri-sun-line");
+          themeIcon.classList.add("ri-moon-line");
+        }
+      }
+      document
+        .getElementById("themeToggle")
+        .addEventListener("click", toggleTheme);
+      const projects = {
+        1: {
+          title: "Event SKAONE FUN RUN 2025",
+          image: "asset/logo.png",
+          link: "https://www.instagram.com/skaonefunrun2025/",
+          TextLink: "Instagram : @SKAONEFUNRUN2025",
+          description:
+            "Membuat postingan instagram dan barang-barang untuk event seperti design baju, mendali, gate start/finish, spanduk event besar/kecil",
+        },
+        2: {
+          title: "Luxury Brand Website",
+          image: "asset/suni.png",
+          link: "https://app.suniindonesia.com/",
+          TextLink: "Universitas Suni Indonesia",
+          description:
+            "Kami membuat website pendaftaran kompleks untuk universitas suni fitur yang di pakai yaitu api otp whatsapp, payment gateway, pembayaran spp, pembayaran admin, test masuk, dan lain2",
+        },
+        3: {
+          title: "Poster Team Growtopia",
+          image: "asset/result_1.png",
+          description: "TeamZelaw Poster Design Untuk Link Team CSN",
+        },
+        4: {
+          title: "Pvp Growtopia Profile",
+          image: "asset/result_2.png",
+          description: "Profile untuk whatsapp atau ig dengan konsep growtopia",
+        },
+        5: {
+          title: "Pvp Growtopia Profile",
+          image: "asset/result_3.png",
+          description: "Profile untuk whatsapp atau ig dengan konsep growtopia",
+        },
+        6: {
+          title: "Background For Live Tiktok",
+          image: "asset/result_template_aobro.png",
+          description:
+            "Background untuk live tiktok dengan konsep baru growtopia",
+        },
+        7: {
+          title: "Poster Price Store",
+          image: "asset/result_template.png",
+          description:
+            "Poster Buat promosi dan testimoni store dengan konsep anime",
+        },
+      };
+      function showProjectDetails(id) {
+        const modal = document.getElementById("projectModal");
+        const project = projects[id];
+        document.getElementById("modalTitle").textContent = project.title;
+        document.getElementById("modalTextLink").textContent = project.TextLink;
+        document.getElementById("modalLink").href = project.link;
+        document.getElementById("modalImage").src = project.image;
+        document.getElementById("modalDescription").textContent =
+          project.description;
+        modal.classList.remove("hidden");
+        modal.classList.add("flex");
+      }
+      function closeProjectDetails() {
+        const modal = document.getElementById("projectModal");
+        modal.classList.add("hidden");
+        modal.classList.remove("flex");
+      }
+      window.onclick = function (event) {
+        const modal = document.getElementById("projectModal");
+        if (event.target === modal) {
+          closeProjectDetails();
+        }
+      };
+    </script>
+  </body>
+</html>
